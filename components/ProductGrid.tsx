@@ -20,12 +20,12 @@ export default function ProductGrid() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
             <p className="section-label mb-3">Our Collection</p>
-            <h2 className="section-heading text-3xl font-bold sm:text-4xl md:text-5xl">
+            {/* <h2 className="section-heading text-3xl font-bold sm:text-4xl md:text-5xl">
               Natural Products, <em>Real Results</em>
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-brand-muted">
               Tap any product to explore full details and place an order.
-            </p>
+            </p> */}
           </div>
 
           <div className="mb-8 flex flex-wrap justify-center gap-2">

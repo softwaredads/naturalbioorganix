@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
+import { BRAND_SLOGAN } from "@/lib/brand";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +16,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "The Natural — Premium Organic Hair & Body Care",
-  description:
-    "Discover premium natural hair growth oil, ammonia-free hair colors, keratin care, and whipped cocoa body butter. 100% natural ingredients for healthier you.",
+  description: `${BRAND_SLOGAN}. Premium natural hair growth oil, ammonia-free hair colors, keratin care, and whipped cocoa body butter.`,
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({

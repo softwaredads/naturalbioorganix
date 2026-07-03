@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ADDRESS, getWhatsAppUrl } from "@/lib/contact";
+import SocialLinks from "./SocialLinks";
 
 export default function CTABanner() {
   return (
@@ -25,6 +27,11 @@ export default function CTABanner() {
               Ready to transform your hair and skin? Browse our collection or
               reach out to place an order.
             </p>
+
+            <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+              {ADDRESS}
+            </p>
+
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="#products"
@@ -33,13 +40,17 @@ export default function CTABanner() {
                 Browse Products
               </Link>
               <Link
-                href="https://wa.me/"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-medium text-white transition-all hover:bg-white/10"
               >
                 Contact on WhatsApp
               </Link>
+            </div>
+
+            <div className="mt-6">
+              <SocialLinks variant="light" />
             </div>
           </div>
         </div>

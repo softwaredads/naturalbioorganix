@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -11,31 +12,20 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link href="#home" className="group flex flex-col">
-          <span className="font-serif text-xs tracking-[0.2em] text-brand-muted uppercase">
-            The
-          </span>
-          <span className="font-serif text-xl font-bold tracking-wide text-brand-green">
-            NATURAL
-          </span>
+    <header className="sticky top-0 z-50 border-b border-brand-cream bg-white shadow-sm">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1">
+        <Link href="#home" className="flex items-center">
+          <Image
+            src="/natural-logo.png"
+            alt="The Natural"
+            width={220}
+            height={88}
+            className="h-[5.5rem] w-auto object-contain"
+            priority
+          />
         </Link>
 
         <ul className="hidden items-center gap-10 md:flex">
